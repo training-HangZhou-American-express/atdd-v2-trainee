@@ -1,11 +1,13 @@
 package com.odde.atddv2.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Accessors(chain = true)
 @Table(name = "users")
@@ -16,4 +18,7 @@ public class User {
     private long id;
 
     private String userName, password;
+
+    @OneToOne
+    private Card card;
 }
